@@ -1,0 +1,7 @@
+.idea/
+Plestrening.iml
+.gitignore
+webdriverenv
+P_test.iml
+chromedriver.exe
+geckodriver.log

@@ -6,6 +6,6 @@ string = '([<td class="nazev">Parcelní číslo:</td>, <td><a href="https://vdp.
 # print(string.lstrip())
 
 s1 = string.replace('<td class="nazev">', '')
-s2 = s1.replace('</td>', |)
+s2 = s1.replace('</td>','')
 s3 = s2.replace('<a href="https://vdp.cuzk.cz/vdp/ruian/', '')
 print(s3)

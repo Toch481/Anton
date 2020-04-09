@@ -28,19 +28,17 @@ parcela_vyhledat = browser.find_element_by_css_selector("#ctl00_bodyPlaceHolder_
 # najde potvrzovací tlačítko a klickne
 parcela_vyhledat.click()
 
-# print(browser.current_url)
-result = requests.get(browser.current_url) #
+# tohle mi vrátí url stránky kam sem se proklikal
+result = requests.get(browser.current_url)
 
+# tohle nevim na co tu mam
 print(result.status_code)
 
+# tohle mi pomocí soupu udělá strin se všim co potřebuju
 src = result.content
-soup = BeautifulSoup(src,("html.parser"))
+soup = BeautifulSoup(src,"html.parser")
 links = soup.find_all("td")
+
+# tehle link vezmu a v String_formating.py snim pracuju abych ho roztřídil dle potřeby
 print(links)
 
-#print("\n")
-
-# for link in links:
-#     if "Vše" in link.text:
-#         print(link)
-#         print(link.attrs['href'])

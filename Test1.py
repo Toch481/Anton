@@ -15,3 +15,4 @@ for link in links:
     if "Vše" in link.text:
         print(link)
         print(link.attrs['href'])
+

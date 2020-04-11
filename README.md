@@ -17,3 +17,6 @@ Typ parcely:Parcela katastru nemovitostí
 Vlastníci, jiní oprávnění Vlastnické právoPodíl Kopal Petr, č. p. 257, 51101 Ohrazenice
 --------------
 + pak trochu víc a líp to naformátovat ale to až pak
+
+NEW: Novej soubour I_know (iknow i should not make new test files, did it anyway fight me !)
+NEW: už sem tak nějak pochopil regex text ještě se naučit pořádně syntaxy na vyhledávání

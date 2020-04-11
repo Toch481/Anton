@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # sem zkopírovat ručně URL z okan co vyskočí po spuštění Web_browser.py
-result = requests.get("https://nahlizenidokn.cuzk.cz/ZobrazObjekt.aspx?encrypted=-USHQr2uYOJwz1pUm9K3cMmyRwQ7tH412tHip-y-qDdPFTx3yqx-cZESauRa6pYsj-_f0jH0M-oBVhntaW6xnGqYqp7bPIo6BannR6sd6ZxCli5K1S5EppQpDMhJ79t6")
+result = requests.get("https://nahlizenidokn.cuzk.cz/ZobrazObjekt.aspx?encrypted=BDOdwKjzl4IzlysRdicDwIp70n6G1VKk3YULLPSc_Po4Pj0To0rHc47naTmfl_la4oLnPTvZZsZBHLmSTtkdoOdH7qkgNKEpu7NjbLSBfEdeSjKhXzZZiWAfd7x_z9tQ")
 
 print(result.status_code)
 

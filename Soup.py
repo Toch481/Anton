@@ -3,25 +3,35 @@ import requests
 from bs4 import BeautifulSoup
 
 # sem zkopírovat ručně URL z okan co vyskočí po spuštění Web_browser.py
-result = requests.get("https://nahlizenidokn.cuzk.cz/ZobrazObjekt.aspx?encrypted=BDOdwKjzl4IzlysRdicDwIp70n6G1VKk3YULLPSc_Po4Pj0To0rHc47naTmfl_la4oLnPTvZZsZBHLmSTtkdoOdH7qkgNKEpu7NjbLSBfEdeSjKhXzZZiWAfd7x_z9tQ")
-
-print(result.status_code)
+result = requests.get("https://nahlizenidokn.cuzk.cz/ZobrazObjekt.aspx?encrypted=RZeR1DVPOWBz_SPkP9spu7jMEXzF9-Z3GvCakI9bDEnAuZfln1wLQmxeqEaMQeWnWeEac2f5NkBC1oHHvQfR7zRD-x_ozX958X9VwF6HanIVwK2F6w9376fRAocihE3E")
 
 src = result.content
+# ten parser se tam má dávat jinak to hází error
 soup = BeautifulSoup(src, "html.parser")
-links = soup.find_all("td")
 
-# tohle si z tý strany vytáhne všechny data a vrátí jen text
+
+# tohle si z tý strany vytáhne všechny data a vrátí jen text a používám to v I_know.py
 text = soup.get_text()
 text1 = " ".join(text.split())
+# blok textu z kterýho vycucnu vše potřebný v I_know.py
 print(text1)
-print("_" * 10)
-# tohle hledá ty data co budu potřebovat a vrátí mi to číslo pozice prvního písmena ve stringu
-print(text1.find("Parcelní číslo:"), text1.find("Katastrální území:"), text1.find("[Číslo LV:]"), )
-obec = text1.find("Obec:")
-# funguje ale hrozná prasárna ^^
-print(text1[315+5],text1[315+6],text1[315+7],text1[315+8],text1[315+9],text1[315+10])
+
+# Tahle část je na vlastníky
+
+#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(2) > td:nth-child(1)
+elems = soup.select_one('#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(2) > td:nth-child(1)')
+# nevim jestli select nebo select one
+
+# když je víc vlastníků tak potřeba hledat i zbytek musim si otestovat jednoho vlastníka a víc a zjistti jestli je to jen ten nth.child
+# tady potřebuju to udělat nějak smart asi loop? aby to přidávalo to tr:nth-child(X) +1 +1 +1 dokud to nevrátí prázdný závorky '[]'
+#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(3) > td > i
+elems1 = soup.select('#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(3) > td > i')
+#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(4) > td > i
+elems2 = soup.select('#content > table.zarovnat.stinuj.zarovnat.stinuj.vlastnici > tbody > tr:nth-child(4) > td > i')
 
 
+print(elems)
+print(elems1)
+print(elems2)
 
 

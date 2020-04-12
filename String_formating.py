@@ -1,3 +1,8 @@
+from Web_browser import get_string
+
+#Tady mas ten string at ho nemusis kopirovat
+string = get_string()
+
 # ----------------------------------------
 # Tady prasim
 # ----------------------------------------

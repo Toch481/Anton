@@ -37,11 +37,12 @@ def get_string():
 	print(result.status_code)
 
 	# tohle mi pomocí soupu udělá strin se všim co potřebuju
-	src = result.content
-	soup = BeautifulSoup(src, "html.parser")
-	links = soup.find_all("td")
+	# src = result.content
+	# soup = BeautifulSoup(src, "html.parser")
+	# links = soup.find_all("td")
 
 	# tehle link vezmu a v String_formating.py snim pracuju abych ho roztřídil dle potřeby
 
-	return links
+	return result
+
 

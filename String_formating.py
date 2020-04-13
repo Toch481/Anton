@@ -3,6 +3,7 @@ from Web_browser import get_string
 #Tady mas ten string at ho nemusis kopirovat
 string = get_string()
 
+
 # ----------------------------------------
 # Tady prasim
 # ----------------------------------------
@@ -38,7 +39,8 @@ string = get_string()
 # a teď každou tu solo část potřebuju okleštit o všechny expresions co začínají a končí "<"
 # s2 = re.search(regex, s1)
 # print(s1)
-total = 1
-for num in range(3):
-    total = num
-print(total)
+# total = 1
+# for num in range(3):
+#     total = num
+# print(total)
+
